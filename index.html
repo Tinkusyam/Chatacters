@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remaining Characters</title>
+    <style>
+        #remainingchars{
+            font-weight: bold;
+            margin-top: 5px;
+            margin-left: 900px;
+            font-size: 20px;
+            color: #fff;
+        }
+        #mytext{
+            height: 150px;
+            width: 1000px;
+            margin-left: 150px;
+            text-align: center;
+        }
+        h1{
+            color: #fff;
+            text-align: center;
+        }
+        p{
+            text-align: center;
+            color: #fff;
+            font-weight: bold;
+        }
+        #usechars{
+            color: #fff;
+            margin-left: 180px;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        body{
+            background-color: rgb(176, 147, 123);
+        }
+    </style>
+</head>
+<body>
+    <h1>Characters Remaining using java script</h1>
+    <p>Please fill out the form below</p>
+    <textarea id="mytext" placeholder="Write anything you can see the magic....."></textarea>
+    <div id="remainingchars">50 Characters Remaining</div>
+    <div id="usechars">50 Characters used</div>
+    <script>
+        const myText = document.getElementById('mytext');
+        const remainschars = document.getElementById('remainingchars');
+    const maxchars = 250;
+
+        const useChars = document.getElementById('mytext');
+        const reusechars = document.getElementById('usechars');
+        const maXchars = 0;
+
+    myText.addEventListener('input',()=>{
+        const remaining = maxchars - myText.value.length;
+        remainschars.textContent = `${remaining} Characters Remaining`;
+    })
+    useChars.addEventListener('input', ()=>{
+        const useremaining = maXchars + useChars.value.length;
+        reusechars.textContent = `${useremaining} Usedcharacters`;
+        
+    })
+    </script>
+</body>
+</html>
